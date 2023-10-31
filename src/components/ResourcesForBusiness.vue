@@ -38,7 +38,9 @@ const features = [
                         system to level up.
                     </p>
                 </div>
-                <div class="flex gap-6 items-center mt-12 -mb-36 relative z-20">
+                <div
+                    class="flex gap-6 items-center pt-20 -mb-36 relative z-20 bg-transparent"
+                >
                     <div
                         class="p-8 bg-white flex flex-col gap-6 max-w-xs rounded-lg shadow-lg"
                         v-for="feat in features"

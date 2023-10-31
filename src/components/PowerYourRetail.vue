@@ -1,5 +1,11 @@
 <script setup>
 import { defineAsyncComponent } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
+
+const modules = [Autoplay];
+
 const features = [
     {
         title: 'Buy online, pick up in store',
@@ -19,6 +25,39 @@ const features = [
         title: 'Buy anywhere, return anywhere',
         description:
             'Accept in-store returns and exchanges of items bought online or at other locations.',
+    },
+];
+
+const items = [
+    {
+        title: 'Advanced inventory management',
+        description:
+            'Generate purchase orders and transfer stock based on inventory forecasts and performance.',
+    },
+    {
+        title: 'Custom staff permissions',
+        description:
+            'Set permissions to control staff access in the POS system so you can delegate with peace of mind.',
+    },
+    {
+        title: 'Unified reporting',
+        description:
+            'Adapt to growing trends in your business with unified analytics that blend in-store and online sales.',
+    },
+    {
+        title: 'Advanced inventory management',
+        description:
+            'Generate purchase orders and transfer stock based on inventory forecasts and performance.',
+    },
+    {
+        title: 'Custom staff permissions',
+        description:
+            'Set permissions to control staff access in the POS system so you can delegate with peace of mind.',
+    },
+    {
+        title: 'Send cart to buy online',
+        description:
+            'Send customers an email with items they were interested in but didn’t purchase in store.',
     },
 ];
 
@@ -45,101 +84,54 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                         tracking, staff management, and more.
                     </p>
                 </div>
-                <div class="flex gap-6 items-center mt-16">
-                    <!-- card -->
-                    <div
-                        class="p-8 bg-primary/20 flex flex-col gap-6 max-w-xs rounded-lg"
-                    >
-                        <div>
-                            <img
-                                src="./../assets/shield-icon.svg"
-                                alt="shield icon"
-                                class="h-12"
-                            />
-                        </div>
-                        <h4 class="text-xl font-bold">
-                            Advanced inventory management
-                        </h4>
-                        <p class="text-sm text-slate-500">
-                            Generate purchase orders and transfer stock based on
-                            inventory forecasts and performance.
-                        </p>
+                <!-- <div class=""> -->
+                <!-- card -->
+                <Swiper
+                    :slidesPerView="3"
+                    :spaceBetween="30"
+                    :pagination="{
+                        clickable: true,
+                    }"
+                    :loop="true"
+                    :autoplay="{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }"
+                    :modules="modules"
+                >
+                    <SwiperSlide v-for="item in items" :key="item.title">
                         <div
-                            class="flex justify-between items-center cursor-pointer"
+                            class="p-8 bg-primary/20 flex flex-col gap-6 max-w-xs rounded-lg slider-card"
                         >
-                            <span class="text-sm">
-                                View all Mzoori POS features
-                            </span>
-                            <img
-                                src="./../assets/chevron-right.svg"
-                                alt="chevron right"
-                                class="h-5"
-                            />
+                            <div>
+                                <img
+                                    src="./../assets/shield-icon.svg"
+                                    alt="shield icon"
+                                    class="h-12"
+                                />
+                            </div>
+                            <h4 class="text-xl font-bold min-h-[4rem]">
+                                {{ item.title }}
+                            </h4>
+                            <p class="text-sm text-slate-500">
+                                {{ item.description }}
+                            </p>
+                            <div
+                                class="flex justify-between items-center cursor-pointer"
+                            >
+                                <span class="text-sm">
+                                    View all Mzoori POS features
+                                </span>
+                                <img
+                                    src="./../assets/chevron-right.svg"
+                                    alt="chevron right"
+                                    class="h-5"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <!-- card -->
-                    <div
-                        class="p-8 bg-primary/20 flex flex-col gap-6 max-w-xs rounded-lg"
-                    >
-                        <div>
-                            <img
-                                src="./../assets/shield-icon.svg"
-                                alt="shield icon"
-                                class="h-12"
-                            />
-                        </div>
-                        <h4 class="text-xl font-bold">
-                            Advanced inventory management
-                        </h4>
-                        <p class="text-sm text-slate-500">
-                            Generate purchase orders and transfer stock based on
-                            inventory forecasts and performance.
-                        </p>
-                        <div
-                            class="flex justify-between items-center cursor-pointer"
-                        >
-                            <span class="text-sm">
-                                View all Mzoori POS features
-                            </span>
-                            <img
-                                src="./../assets/chevron-right.svg"
-                                alt="chevron right"
-                                class="h-5"
-                            />
-                        </div>
-                    </div>
-                    <!-- card -->
-                    <div
-                        class="p-8 bg-primary/20 flex flex-col gap-6 max-w-xs rounded-lg"
-                    >
-                        <div>
-                            <img
-                                src="./../assets/shield-icon.svg"
-                                alt="shield icon"
-                                class="h-12"
-                            />
-                        </div>
-                        <h4 class="text-xl font-bold">
-                            Advanced inventory management
-                        </h4>
-                        <p class="text-sm text-slate-500">
-                            Generate purchase orders and transfer stock based on
-                            inventory forecasts and performance.
-                        </p>
-                        <div
-                            class="flex justify-between items-center cursor-pointer"
-                        >
-                            <span class="text-sm">
-                                View all Mzoori POS features
-                            </span>
-                            <img
-                                src="./../assets/chevron-right.svg"
-                                alt="chevron right"
-                                class="h-5"
-                            />
-                        </div>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
+                <!-- </div> -->
                 <!-- Power your business section -->
                 <div class="my-8">
                     <div
@@ -194,6 +186,19 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
     </section>
 </template>
 
-<style>
-/*  */
+<style scoped>
+.swiper {
+    height: 27rem;
+    overflow: visible;
+    padding: 3rem 0;
+}
+
+.swiper div.swiper-wrapper {
+    display: flex !important;
+}
+
+.swiper-slide .slider-card {
+    width: 100%;
+    height: 100%;
+}
 </style>
