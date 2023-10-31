@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* ./src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --primary: #008c8e;
+        --custom-yellow: #ffd40e;
+    }
+
+    html,
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+}
