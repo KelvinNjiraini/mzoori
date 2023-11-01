@@ -17,18 +17,21 @@ const year = new Date().getFullYear();
             alt=""
             class="absolute bottom-0 right-0"
         />
-        <div class="flex flex-col items-center p-[5rem] gap-3 relative z-10">
+        <div
+            class="flex flex-col items-center p-5 md:p-[5rem] gap-3 relative z-10"
+        >
             <h1
-                class="text-6xl font-bold text-center leading-[65px] text-white"
+                class="text-4xl md:text-6xl font-bold text-center leading-[65px] text-white"
             >
                 Not just e-commerce.
                 <span class="text-custom-yellow"> All commerce. </span>
             </h1>
-            <span class="text-lg text-white"
+            <span
+                class="md:text-lg text-white text-center md:text-start mb-3 md:mb-0"
                 >Bring in-store and online sales together with the Mzoori POS
                 system.</span
             >
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 md:gap-6">
                 <BaseButton variant="inverted">Sign up</BaseButton>
                 <BaseButton variant="outline" class="text-white"
                     >Learn more</BaseButton
@@ -41,7 +44,9 @@ const year = new Date().getFullYear();
                 >
             </div>
         </div>
-        <div class="flex items-center justify-between">
+        <div
+            class="flex flex-col sm:flex-row gap-3 items-center justify-between"
+        >
             <span class="text-xs text-white"
                 >&copy; {{ year }}@mzoori. All Rights Reserved</span
             >

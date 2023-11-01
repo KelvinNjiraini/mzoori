@@ -11,7 +11,7 @@
             class="absolute bottom-0 right-0"
         />
         <div class="flex flex-col gap-5 mb-5">
-            <h1 class="text-4xl font-semibold text-white max-w-sm">
+            <h1 class="text-2xl md:text-4xl font-semibold text-white max-w-sm">
                 Our customer reviews speak for themselves
             </h1>
             <div class="flex items-center cursor-pointer gap-5">
@@ -27,22 +27,24 @@
         </div>
         <!-- card here -->
         <div
-            class="p-16 rounded-lg bg-gradient-to-br from-white/70 to-transparent backdrop-blur-3xl shadow-md -mb-[13rem]"
+            class="p-16 rounded-lg bg-gradient-to-br from-white/70 to-transparent backdrop-blur-3xl shadow-md lg:-mb-[13rem]"
         >
             <div class="flex items-center justify-between">
-                <div class="flex flex-col space-y-6 -mt-5">
-                    <h1 class="text-4xl font-bold max-w-xs text-white">
+                <div class="flex flex-col space-y-6 lg:-mt-5">
+                    <h1
+                        class="text-2xl md:text-4xl font-bold md:max-w-xs text-white"
+                    >
                         Modern POS software built for your business.
                     </h1>
-                    <span class="text-sm max-w-xs text-white">
+                    <span class="text-sm md:max-w-xs text-white">
                         Introducing a powerful solution that will change how you
                         sell and manage a retail outlet at all levels, from
                         small shops to supermarkets
                     </span>
                     <div
-                        class="flex flex-col gap-2 bg-white/40 rounded-md shadow-sm p-8"
+                        class="flex flex-col gap-2 bg-white/40 rounded-md shadow-sm p-4 md:p-8"
                     >
-                        <h5 class="text-lg font-bold text-white">
+                        <h5 class="md:text-lg font-bold text-white">
                             Do own or think of setting up a retail outlet? Talk
                             to us.
                         </h5>
@@ -62,7 +64,7 @@
                     <img
                         src="./../assets/mzoori-agent.svg"
                         alt="POS desktop"
-                        class="-mt-[16rem] -mb-[4rem]"
+                        class="hidden lg:inline-block lg:-mt-[16rem] lg:-mb-[4rem]"
                     />
                 </div>
             </div>

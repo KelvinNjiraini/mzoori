@@ -18,7 +18,7 @@ const features = [
 ];
 </script>
 <template>
-    <section class="mr-10 md:mr-24 -mb-[9rem]">
+    <section class="mr-10 md:mr-24 lg:-mb-[9rem]">
         <div
             class="relative bg-gradient-to-bl from-white/70 to-transparent backdrop-blur-3xl shadow-md rounded-xl z-10"
         >
@@ -27,19 +27,19 @@ const features = [
                 alt=""
                 class="absolute top-0 right-0 -z-20"
             />
-            <div class="p-8 md:p-24 md:pl-[10.5rem]">
-                <div class="flex">
-                    <h1 class="text-4xl font-bold max-w-xs">
+            <div class="p-8 lg:p-24 md:pl-[10.5rem] mb-16 lg:mb-0">
+                <div class="flex gap-5 lg:gap-0">
+                    <h1 class="text-2xl md:text-4xl font-bold max-w-xs">
                         Resources for your business
                     </h1>
-                    <p class="max-w-sm text-lg text-start ml-auto">
+                    <p class="max-w-sm md:text-lg text-start ml-auto">
                         Discover up-and-coming trends, access free guides, and
                         learn how business owners like you use Mzoori’s POS
                         system to level up.
                     </p>
                 </div>
                 <div
-                    class="flex gap-6 items-center pt-20 -mb-36 relative z-20 bg-transparent"
+                    class="flex gap-6 items-center pt-20 lg:-mb-36 relative z-20 bg-transparent flex-wrap justify-center lg:justify-normal lg:flex-nowrap"
                 >
                     <div
                         class="p-8 bg-white flex flex-col gap-6 max-w-xs rounded-lg shadow-lg"

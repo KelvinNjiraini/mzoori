@@ -31,7 +31,7 @@ const features = [
                 relationships.
             </p>
         </div>
-        <div class="flex gap-6 items-center justify-center mt-16">
+        <div class="flex gap-6 items-center justify-center mt-16 flex-wrap">
             <div
                 class="p-8 bg-white flex flex-col gap-6 max-w-xs rounded-lg shadow-lg"
                 v-for="feat in features"
@@ -64,17 +64,23 @@ const features = [
         </div>
         <!--  -->
         <div class="my-8 w-full md:w-[80%] mx-auto">
-            <div class="grid grid-cols-2 justify-center items-center">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 justify-center items-center"
+            >
                 <img
                     src="./../assets/desktop-computer-2.svg"
                     alt="desktop computer"
                     class=""
                 />
-                <div class="mt-20 flex flex-col space-y-6">
-                    <h1 class="text-3xl font-semibold max-w-sm text-primary">
+                <div
+                    class="md:mt-20 flex flex-col space-y-6 text-center md:text-start"
+                >
+                    <h1
+                        class="text-xl md:text-3xl font-semibold md:max-w-sm text-primary"
+                    >
                         Powerful POS hardware you can count on
                     </h1>
-                    <p class="text-lg max-w-[21rem]">
+                    <p class="text-base md:text-lg md:max-w-[21rem]">
                         Mzoori’s sleek POS hardware comes with built-in payment
                         processing and competitive credit card rates. You’ll be
                         able to accept all the major payment methods and look

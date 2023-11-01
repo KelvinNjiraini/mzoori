@@ -6,7 +6,7 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
 <template>
     <main class="bg-primary w-full relative">
         <div
-            class="flex flex-col items-center justify-center min-h-screen p-20 pb-[12rem] space-y-4"
+            class="flex flex-col items-center justify-center min-h-screen p-8 md:p-20 md:pb-[12rem] space-y-4"
         >
             <div class="flex items-center gap-2 mb-5">
                 <div
@@ -19,7 +19,9 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
             <div
                 class="flex flex-col justify-center items-center text-white max-w-[37rem] mb-5"
             >
-                <h1 class="text-6xl font-bold text-center leading-[65px]">
+                <h1
+                    class="text-4xl md:text-6xl font-bold text-center leading-[65px]"
+                >
                     <span class="text-custom-yellow"
                         >Unlock your businesses</span
                     >
@@ -31,7 +33,7 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                     backed by everything you need to sell online.
                 </span>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-6 relative z-10">
                 <BaseButton>Sign in</BaseButton>
                 <BaseButton variant="inverted">Sign up</BaseButton>
             </div>

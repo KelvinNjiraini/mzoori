@@ -1,19 +1,41 @@
+<script setup>
+import { ref } from 'vue';
+
+const answerIsShown = ref(false);
+</script>
 <template>
     <section class="bg-white p-8 md:p-[10.5rem]">
-        <h1 class="text-4xl font-bold mb-6">Frequently asked questions</h1>
+        <h1 class="text-2xl md:text-4xl font-bold mb-6">
+            Frequently asked questions
+        </h1>
         <div class="flex flex-col gap-5">
             <!-- card -->
-            <div class="rounded-lg shadow-lg p-9 flex gap-3">
+            <div class="rounded-lg shadow-lg p-4 md:p-9 flex gap-3">
                 <div>
-                    <span class="text-custom-yellow text-6xl leading-3"
-                        >&minus;</span
+                    <span
+                        class="text-3xl md:text-6xl md:leading-3 cursor-pointer"
+                        :class="
+                            answerIsShown
+                                ? 'text-custom-yellow'
+                                : 'text-primary'
+                        "
+                        @click="answerIsShown = !answerIsShown"
                     >
+                        {{ answerIsShown ? '&minus;' : '&plus;' }}
+                    </span>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <h3 class="text-md font-semibold">
+                    <h3 class="text-sm md:text-md font-semibold">
                         What is a POS (point of sale)?
                     </h3>
-                    <p class="text-slate-500">
+                    <p
+                        class="text-slate-500 text-sm md:text-base"
+                        :class="
+                            answerIsShown
+                                ? 'h-full opacity-100 duration-200  transition-all'
+                                : 'h-0 opacity-0 duration-200  transition-all'
+                        "
+                    >
                         A point of sale, or POS, is a system for making sales in
                         person. It’s the device and/or software that you use to
                         process transactions and accept payments, likely from
@@ -33,30 +55,36 @@
             </div>
             <div class="rounded-lg shadow-lg p-9 flex items-start gap-3">
                 <div>
-                    <span class="text-primary text-6xl leading-3">&plus;</span>
+                    <span class="text-primary text-3xl md:text-6xl md:leading-3"
+                        >&plus;</span
+                    >
                 </div>
                 <div class="flex flex-col gap-3">
-                    <h3 class="text-md font-semibold">
+                    <h3 class="text-sm md:text-md font-semibold">
                         What is a POS example?
                     </h3>
                 </div>
             </div>
             <div class="rounded-lg shadow-lg p-9 flex items-start gap-3">
                 <div>
-                    <span class="text-primary text-6xl leading-3">&plus;</span>
+                    <span class="text-primary text-3xl md:text-6xl md:leading-3"
+                        >&plus;</span
+                    >
                 </div>
                 <div class="flex flex-col gap-3">
-                    <h3 class="text-md font-semibold">
+                    <h3 class="text-sm md:text-md font-semibold">
                         What is a POS example?
                     </h3>
                 </div>
             </div>
             <div class="rounded-lg shadow-lg p-9 flex items-start gap-3">
                 <div>
-                    <span class="text-primary text-6xl leading-3">&plus;</span>
+                    <span class="text-primary text-3xl md:text-6xl md:leading-3"
+                        >&plus;</span
+                    >
                 </div>
                 <div class="flex flex-col gap-3">
-                    <h3 class="text-md font-semibold">
+                    <h3 class="text-sm md:text-md font-semibold">
                         What is a POS example?
                     </h3>
                 </div>

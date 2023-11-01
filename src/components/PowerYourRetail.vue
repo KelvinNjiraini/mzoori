@@ -74,11 +74,13 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                 class="absolute top-0 left-0 -z-20"
             />
             <div class="p-8 md:p-20">
-                <div class="flex">
-                    <h1 class="text-4xl font-bold max-w-xs">
+                <div
+                    class="flex flex-col gap-5 lg:gap-0 md:flex-row items-center"
+                >
+                    <h1 class="text-2xl lg:text-4xl font-bold md:max-w-xs">
                         Power your retail business
                     </h1>
-                    <p class="max-w-sm text-lg text-start ml-auto">
+                    <p class="md:max-w-sm lg:text-lg text-start ml-auto">
                         Get the tools you need to run your retail store.
                         Mzoori’s all-in-one POS system comes with inventory
                         tracking, staff management, and more.
@@ -98,6 +100,19 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                         disableOnInteraction: false,
                     }"
                     :modules="modules"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 1,
+                        },
+                        800: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    }"
                 >
                     <SwiperSlide v-for="item in items" :key="item.title">
                         <div
@@ -135,18 +150,22 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                 <!-- Power your business section -->
                 <div class="my-8">
                     <div
-                        class="grid grid-cols-2 justify-center items-center w-full"
+                        class="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full"
                     >
-                        <div class="mt-20 flex flex-col space-y-6">
-                            <h1 class="text-3xl font-semibold max-w-xs">
+                        <div
+                            class="md:mt-20 flex flex-col space-y-6 text-center md:text-start"
+                        >
+                            <h1
+                                class="text-xl md:text-3xl font-semibold md:max-w-xs"
+                            >
                                 Power your retail businessSeize more sales
                             </h1>
-                            <p class="text-lg max-w-xs">
+                            <p class="md:text-lg md:max-w-xs">
                                 Offer frictionless shopping experiences with a
                                 modern POS system that lets customers shop their
                                 way, from online to checkout line.
                             </p>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 self-center md:self-start">
                                 <BaseButton class="border-primary"
                                     >Sign up</BaseButton
                                 >
@@ -155,16 +174,20 @@ const BaseButton = defineAsyncComponent(() => import('./ui/BaseButton.vue'));
                                 >
                             </div>
                         </div>
-                        <img
-                            src="./../assets/desktop-computer-2.svg"
-                            alt="desktop computer"
-                            class=""
-                        />
+                        <div class="w-full">
+                            <img
+                                src="./../assets/desktop-computer-2.svg"
+                                alt="desktop computer"
+                                class="w-full"
+                            />
+                        </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-8 my-8 items-center"
+                >
                     <div
-                        class="flex gap-3"
+                        class="flex gap-3 w-full"
                         v-for="feat in features"
                         :key="feat.title"
                     >
