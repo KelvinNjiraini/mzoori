@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
             alt=""
             class="absolute bottom-0 right-0"
         />
-        <div class="flex flex-col items-center p-[5rem] gap-3">
+        <div class="flex flex-col items-center p-[5rem] gap-3 relative z-10">
             <h1
                 class="text-6xl font-bold text-center leading-[65px] text-white"
             >
